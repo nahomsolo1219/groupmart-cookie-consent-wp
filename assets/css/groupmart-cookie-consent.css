@@ -1,0 +1,388 @@
+/**
+ * GroupMart Cookie Consent Plugin Styles
+ * Version: 1.0.0
+ */
+
+/* Import Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Cookie Consent Overlay - Removed to allow browsing */
+#gm-cookie-consent-overlay {
+    display: none !important;
+}
+
+/* Cookie Consent Banner */
+#gm-cookie-consent-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    z-index: 1000000;
+    display: none;
+    animation: slideUp 0.4s ease-out;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+#gm-cookie-consent-banner.show,
+#gm-cookie-consent-overlay.show {
+    display: block;
+}
+
+/* Content Container */
+.gm-cookie-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Section */
+.gm-cookie-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.gm-cookie-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/541/541732.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.gm-cookie-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+/* Description Section */
+.gm-cookie-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+}
+
+.gm-cookie-description p {
+    margin: 0 0 12px 0;
+}
+
+.gm-cookie-description p:last-child {
+    margin-bottom: 0;
+}
+
+.gm-cookie-description a {
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+.gm-cookie-description a:hover {
+    color: #004999;
+}
+
+/* Cookie Options Section */
+.gm-cookie-options {
+    display: none;
+    margin-bottom: 20px;
+    padding: 16px;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+.gm-cookie-options.show {
+    display: block;
+}
+
+/* Individual Cookie Option */
+.gm-cookie-option {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.gm-cookie-option:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.gm-cookie-option-content {
+    flex: 1;
+}
+
+.gm-cookie-option-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+}
+
+.gm-cookie-option-description {
+    font-size: 13px;
+    color: #6a6a6a;
+    line-height: 1.5;
+}
+
+/* Toggle Switch */
+.gm-cookie-toggle {
+    margin-left: 16px;
+    position: relative;
+}
+
+.gm-cookie-toggle input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.gm-cookie-toggle-slider {
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 24px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.gm-cookie-toggle-slider:before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.gm-cookie-toggle input[type="checkbox"]:checked + .gm-cookie-toggle-slider {
+    background-color: #4CAF50;
+}
+
+.gm-cookie-toggle input[type="checkbox"]:checked + .gm-cookie-toggle-slider:before {
+    transform: translateX(24px);
+}
+
+.gm-cookie-toggle input[type="checkbox"]:disabled + .gm-cookie-toggle-slider {
+    background-color: #4CAF50;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.gm-cookie-toggle input[type="checkbox"]:focus + .gm-cookie-toggle-slider {
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+/* Buttons Section */
+.gm-cookie-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Button Styles */
+.gm-cookie-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+    font-family: inherit;
+}
+
+.gm-cookie-btn:focus {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+}
+
+.gm-cookie-btn-primary {
+    background-color: #0066cc;
+    color: white;
+}
+
+.gm-cookie-btn-primary:hover {
+    background-color: #004999;
+}
+
+.gm-cookie-btn-primary:active {
+    background-color: #003d7a;
+}
+
+.gm-cookie-btn-secondary {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.gm-cookie-btn-secondary:hover {
+    background-color: #e0e0e0;
+}
+
+.gm-cookie-btn-secondary:active {
+    background-color: #d0d0d0;
+}
+
+.gm-cookie-btn-link {
+    background: none;
+    color: #0066cc;
+    text-decoration: underline;
+    padding: 12px 16px;
+}
+
+.gm-cookie-btn-link:hover {
+    color: #004999;
+}
+
+.gm-cookie-btn-link:active {
+    color: #003d7a;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+    }
+    to { 
+        opacity: 1; 
+    }
+}
+
+@keyframes slideUp {
+    from { 
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    #gm-cookie-consent-banner {
+        padding: 16px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .gm-cookie-title {
+        font-size: 18px;
+    }
+
+    .gm-cookie-description {
+        font-size: 13px;
+    }
+
+    .gm-cookie-buttons {
+        flex-direction: column;
+    }
+
+    .gm-cookie-btn {
+        width: 100%;
+    }
+
+    .gm-cookie-option {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .gm-cookie-toggle {
+        margin-left: 0;
+        margin-top: 12px;
+    }
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .gm-cookie-content {
+        max-width: 100%;
+    }
+}
+
+/* Print Styles */
+@media print {
+    #gm-cookie-consent-banner,
+    #gm-cookie-consent-overlay {
+        display: none !important;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    #gm-cookie-consent-banner {
+        border: 2px solid #000;
+    }
+
+    .gm-cookie-btn-primary {
+        border: 2px solid #000;
+    }
+
+    .gm-cookie-toggle-slider {
+        border: 2px solid #000;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    #gm-cookie-consent-banner,
+    #gm-cookie-consent-overlay {
+        animation: none;
+    }
+
+    .gm-cookie-toggle-slider:before {
+        transition: none;
+    }
+}
+
+/* Dark Mode Support (Optional - uncomment if needed) */
+/*
+@media (prefers-color-scheme: dark) {
+    #gm-cookie-consent-banner {
+        background: #2a2a2a;
+        color: #ffffff;
+    }
+
+    .gm-cookie-title,
+    .gm-cookie-option-title {
+        color: #ffffff;
+    }
+
+    .gm-cookie-description,
+    .gm-cookie-option-description {
+        color: #cccccc;
+    }
+
+    .gm-cookie-options {
+        background: #1a1a1a;
+    }
+
+    .gm-cookie-option {
+        border-bottom-color: #3a3a3a;
+    }
+
+    .gm-cookie-btn-secondary {
+        background-color: #3a3a3a;
+        color: #ffffff;
+    }
+
+    .gm-cookie-btn-secondary:hover {
+        background-color: #4a4a4a;
+    }
+}
+*/
