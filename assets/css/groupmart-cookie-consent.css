@@ -1,6 +1,6 @@
 /**
  * GroupMart Cookie Consent Plugin Styles
- * Version: 1.0.0
+ * Version: 1.0.0 - Minimal Bottom-Left Card Design
  */
 
 /* Import Poppins Font */
@@ -11,19 +11,20 @@
     display: none !important;
 }
 
-/* Cookie Consent Banner */
+/* Cookie Consent Banner - Minimal Bottom Left Card */
 #gm-cookie-consent-banner {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 20px;
+    left: 20px;
+    max-width: 380px;
     background: #ffffff;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 20px;
     z-index: 1000000;
     display: none;
-    animation: slideUp 0.4s ease-out;
+    animation: slideInLeft 0.4s ease-out;
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    border-radius: 12px;
 }
 
 #gm-cookie-consent-banner.show,
@@ -33,29 +34,29 @@
 
 /* Content Container */
 .gm-cookie-content {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 100%;
 }
 
 /* Header Section */
 .gm-cookie-header {
     display: flex;
     align-items: center;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .gm-cookie-icon {
-    width: 32px;
-    height: 32px;
-    margin-right: 12px;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
     background-image: url('https://cdn-icons-png.flaticon.com/512/541/541732.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    flex-shrink: 0;
 }
 
 .gm-cookie-title {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
     color: #1a1a1a;
     margin: 0;
@@ -63,14 +64,14 @@
 
 /* Description Section */
 .gm-cookie-description {
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 13px;
+    line-height: 1.5;
     color: #4a4a4a;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .gm-cookie-description p {
-    margin: 0 0 12px 0;
+    margin: 0 0 10px 0;
 }
 
 .gm-cookie-description p:last-child {
@@ -89,8 +90,8 @@
 /* Cookie Options Section */
 .gm-cookie-options {
     display: none;
-    margin-bottom: 20px;
-    padding: 16px;
+    margin-bottom: 16px;
+    padding: 12px;
     background: #f5f5f5;
     border-radius: 8px;
 }
@@ -103,8 +104,8 @@
 .gm-cookie-option {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 16px;
-    padding-bottom: 16px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
     border-bottom: 1px solid #e0e0e0;
 }
 
@@ -119,21 +120,21 @@
 }
 
 .gm-cookie-option-title {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 600;
     color: #1a1a1a;
     margin-bottom: 4px;
 }
 
 .gm-cookie-option-description {
-    font-size: 13px;
+    font-size: 12px;
     color: #6a6a6a;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 /* Toggle Switch */
 .gm-cookie-toggle {
-    margin-left: 16px;
+    margin-left: 12px;
     position: relative;
 }
 
@@ -146,10 +147,10 @@
 
 .gm-cookie-toggle-slider {
     display: inline-block;
-    width: 48px;
-    height: 24px;
+    width: 44px;
+    height: 22px;
     background-color: #ccc;
-    border-radius: 24px;
+    border-radius: 22px;
     position: relative;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -158,8 +159,8 @@
 .gm-cookie-toggle-slider:before {
     content: "";
     position: absolute;
-    height: 18px;
-    width: 18px;
+    height: 16px;
+    width: 16px;
     left: 3px;
     bottom: 3px;
     background-color: white;
@@ -172,7 +173,7 @@
 }
 
 .gm-cookie-toggle input[type="checkbox"]:checked + .gm-cookie-toggle-slider:before {
-    transform: translateX(24px);
+    transform: translateX(22px);
 }
 
 .gm-cookie-toggle input[type="checkbox"]:disabled + .gm-cookie-toggle-slider {
@@ -185,20 +186,20 @@
     box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
 }
 
-/* Buttons Section */
+/* Buttons Section - Compact Layout */
 .gm-cookie-buttons {
     display: flex;
-    gap: 12px;
+    gap: 8px;
     flex-wrap: wrap;
     align-items: center;
 }
 
-/* Button Styles */
+/* Button Styles - Smaller and Compact */
 .gm-cookie-btn {
-    padding: 12px 24px;
+    padding: 8px 16px;
     border: none;
     border-radius: 6px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s;
@@ -241,7 +242,7 @@
     background: none;
     color: #0066cc;
     text-decoration: underline;
-    padding: 12px 16px;
+    padding: 8px 12px;
 }
 
 .gm-cookie-btn-link:hover {
@@ -262,13 +263,13 @@
     }
 }
 
-@keyframes slideUp {
+@keyframes slideInLeft {
     from { 
-        transform: translateY(100%);
+        transform: translateX(-100%);
         opacity: 0;
     }
     to { 
-        transform: translateY(0);
+        transform: translateX(0);
         opacity: 1;
     }
 }
@@ -276,42 +277,52 @@
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
     #gm-cookie-consent-banner {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        max-width: calc(100% - 20px);
         padding: 16px;
-        max-height: 90vh;
+        max-height: 85vh;
         overflow-y: auto;
     }
 
     .gm-cookie-title {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .gm-cookie-description {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .gm-cookie-buttons {
-        flex-direction: column;
+        gap: 6px;
     }
 
     .gm-cookie-btn {
-        width: 100%;
+        padding: 7px 12px;
+        font-size: 12px;
+        flex: 1;
+        min-width: calc(50% - 3px);
     }
 
-    .gm-cookie-option {
-        flex-direction: column;
-        align-items: flex-start;
+    .gm-cookie-btn-link {
+        flex-basis: 100%;
+        text-align: center;
     }
+}
 
-    .gm-cookie-toggle {
-        margin-left: 0;
-        margin-top: 12px;
+/* Small mobile devices */
+@media (max-width: 380px) {
+    .gm-cookie-btn {
+        flex: 1;
+        min-width: 100%;
     }
 }
 
 /* Tablet Styles */
 @media (max-width: 1024px) and (min-width: 769px) {
-    .gm-cookie-content {
-        max-width: 100%;
+    #gm-cookie-consent-banner {
+        max-width: 360px;
     }
 }
 
